@@ -34,7 +34,8 @@ export const i18n = {
       title: '沉浸式的健康饮食长读',
       back: '返回首页',
       readingTime: '分钟阅读',
-      related: '更多文章'
+      related: '全部文章',
+      relatedCount: '篇'
     },
     footer: {
       tagline: '让科学的饮食建议，回归每个人的餐桌。',
@@ -74,7 +75,8 @@ export const i18n = {
       title: 'An immersive deep-dive into healthy eating',
       back: 'Back to home',
       readingTime: 'min read',
-      related: 'More articles'
+      related: 'All articles',
+      relatedCount: 'articles'
     },
     footer: {
       tagline: 'Bring evidence-based eating back to every table.',

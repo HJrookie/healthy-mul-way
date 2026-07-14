@@ -55,7 +55,7 @@ export const guidanceItems = [
     id: 'mediterranean',
     icon: 'leaf',
     accent: '#34C759',
-    url: 'https://oldwayspt.org/traditional-mediterranean-diet/',
+    url: 'https://oldwayspt.org/',
     org: { zh: '地中海饮食指南', en: 'Mediterranean Diet' },
     title: { zh: '地中海饮食法', en: 'Mediterranean Diet' },
     status: { zh: '连续多年「全球最佳综合饮食」', en: 'Named best overall diet for years running' },

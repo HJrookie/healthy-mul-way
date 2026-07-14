@@ -63,6 +63,7 @@
 <script>
 import { ui, closeArticle } from '../store.js'
 import { i18n } from '../data/i18n.js'
+import { coverGradient } from '../data/covers.js'
 import Icon from './Icon.vue'
 
 export default {
@@ -72,7 +73,7 @@ export default {
     article: { type: Object, required: true }
   },
   data() {
-    return { ui }
+    return { ui, coverGradient }
   },
   computed: {
     t() {
@@ -82,10 +83,7 @@ export default {
       return this.article.content[this.ui.lang] || []
     },
     coverStyle() {
-      const map = {
-        mediterranean: 'linear-gradient(135deg, #2f9e57 0%, #34c759 45%, #30b0c7 100%)'
-      }
-      return { background: map[this.article.cover] || map.mediterranean }
+      return { background: coverGradient(this.article.cover) }
     }
   },
   methods: {

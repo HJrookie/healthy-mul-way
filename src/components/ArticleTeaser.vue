@@ -6,9 +6,10 @@
         <h2 class="section-title">{{ t.article.title }}</h2>
       </header>
 
+      <!-- 编辑精选：首篇文章大卡 -->
       <article
         class="feature"
-        :style="coverStyle"
+        :style="{ background: coverGradient(articles[0].cover) }"
         @click="openArticle(articles[0].id)"
       >
         <div class="feature__overlay">
@@ -26,6 +27,21 @@
           </div>
         </div>
       </article>
+
+      <!-- 全部文章 -->
+      <div class="teaser__list-head" v-reveal>
+        <h3 class="teaser__list-title">{{ t.article.related }}</h3>
+        <span class="teaser__count">{{ articles.length }} {{ t.article.relatedCount }}</span>
+      </div>
+
+      <div class="teaser__grid" :class="{ 'grid--in': inView }" ref="grid">
+        <ArticleCard
+          v-for="item in restArticles"
+          :key="item.id"
+          :article="item"
+          class="teaser__cell"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -34,24 +50,37 @@
 import { ui, openArticle } from '../store.js'
 import { i18n } from '../data/i18n.js'
 import { articles } from '../data/articles.js'
+import { coverGradient } from '../data/covers.js'
 import Icon from './Icon.vue'
+import ArticleCard from './ArticleCard.vue'
 
 export default {
   name: 'ArticleTeaser',
-  components: { Icon },
+  components: { Icon, ArticleCard },
   data() {
-    return { ui, articles }
+    return { ui, articles, inView: false }
   },
   computed: {
     t() {
       return i18n[this.ui.lang]
     },
-    coverStyle() {
-      const map = {
-        mediterranean: 'linear-gradient(135deg, #2f9e57 0%, #34c759 45%, #30b0c7 100%)'
-      }
-      return { background: map[articles[0].cover] || map.mediterranean }
+    restArticles() {
+      return this.articles.slice(1)
     }
+  },
+  mounted() {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            this.inView = true
+            io.disconnect()
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+    if (this.$refs.grid) io.observe(this.$refs.grid)
   },
   methods: {
     openArticle,
@@ -64,7 +93,7 @@ export default {
 
 <style scoped>
 .teaser {
-  padding: 40px 24px 80px;
+  padding: 40px 24px 100px;
 }
 .teaser__inner {
   max-width: 1120px;
@@ -94,12 +123,13 @@ export default {
   position: relative;
   border-radius: 28px;
   overflow: hidden;
-  min-height: 360px;
+  min-height: 340px;
   display: flex;
   align-items: flex-end;
   cursor: pointer;
   box-shadow: 0 24px 60px rgba(47, 158, 87, 0.22);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  margin-bottom: 46px;
 }
 .feature:hover {
   transform: translateY(-4px) scale(1.01);
@@ -158,7 +188,59 @@ export default {
   padding: 9px 16px;
   border-radius: 999px;
 }
-@media (max-width: 560px) {
+.teaser__list-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+.teaser__list-title {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.teaser__count {
+  font-size: 14px;
+  color: var(--muted);
+}
+.teaser__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.teaser__cell {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.grid--in .teaser__cell {
+  opacity: 1;
+  transform: none;
+}
+.grid--in .teaser__cell:nth-child(1) { transition-delay: 0ms; }
+.grid--in .teaser__cell:nth-child(2) { transition-delay: 70ms; }
+.grid--in .teaser__cell:nth-child(3) { transition-delay: 140ms; }
+.grid--in .teaser__cell:nth-child(4) { transition-delay: 210ms; }
+.grid--in .teaser__cell:nth-child(5) { transition-delay: 280ms; }
+.grid--in .teaser__cell:nth-child(6) { transition-delay: 350ms; }
+.grid--in .teaser__cell:nth-child(7) { transition-delay: 420ms; }
+.grid--in .teaser__cell:nth-child(8) { transition-delay: 490ms; }
+.grid--in .teaser__cell:nth-child(9) { transition-delay: 560ms; }
+.grid--in .teaser__cell:nth-child(10) { transition-delay: 630ms; }
+
+@media (max-width: 980px) {
+  .teaser__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .teaser__grid {
+    grid-template-columns: 1fr;
+  }
   .feature__overlay {
     padding: 26px;
   }
