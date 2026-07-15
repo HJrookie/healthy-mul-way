@@ -53,7 +53,7 @@
         v-if="showFeature"
         class="feature"
         :style="{ background: coverGradient(articles[0].cover) }"
-        :href="'#' + featureLink"
+        :href="featureLink"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -140,7 +140,8 @@ export default {
       return this.articles.slice(1)
     },
     featureLink() {
-      return '/article/' + this.articles[0].id
+      const lang = (this.$route && this.$route.path) ? (this.$route.path.startsWith('/en') ? 'en' : 'zh') : this.ui.lang
+      return '/' + lang + '/article/' + this.articles[0].id
     },
     featureIcon() {
       return this.iconForArticle(this.articles[0].id)

@@ -6,6 +6,12 @@ export const i18n = {
   zh: {
     brand: '净食',
     brandSub: 'PureEat',
+    seo: {
+      homeTitle: '净食 PureEat · 全球权威健康饮食指南',
+      homeDesc: 'PureEat 净食 —— 汇集世界卫生组织、哈佛大学、中国营养学会等权威机构的科学共识，把复杂的营养学变成你每天都能用上的简单选择。',
+      ogTitle: '净食 PureEat · 全球权威健康饮食指南',
+      ogDesc: '汇集全球顶尖机构的科学共识，把复杂的营养学变成每天用得上的简单选择。'
+    },
     nav: {
       home: '首页',
       guidance: '权威指南',
@@ -98,6 +104,12 @@ export const i18n = {
   en: {
     brand: 'PureEat',
     brandSub: '净食',
+    seo: {
+      homeTitle: 'PureEat 净食 · Global Authority on Healthy Eating',
+      homeDesc: 'PureEat brings evidence-based healthy-eating and lifestyle science from the WHO, Harvard, the Chinese Nutrition Society and more, straight to the public.',
+      ogTitle: 'PureEat 净食 · Global Authority on Healthy Eating',
+      ogDesc: 'We turn the scientific consensus of the world’s leading institutions into simple choices you can use every day.'
+    },
     nav: {
       home: 'Home',
       guidance: 'Guidance',

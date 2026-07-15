@@ -2,7 +2,10 @@
  * 文章数据（中英文结构化分块）。
  * 每篇文章中文内容 ≥1500 字。
  */
+import { articlesExtra } from './articles-extra/index.js'
+
 export const articles = [
+  ...articlesExtra,
   {
     id: 'mediterranean',
     category: { zh: '饮食法深读', en: 'Diet Deep-Dive' },

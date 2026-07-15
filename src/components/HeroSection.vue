@@ -46,11 +46,12 @@ export default {
   methods: {
     openArticle,
     goGuidance() {
-      this.ui.reading = null
-      this.$nextTick(() => {
+      if (this.$route.path === `/${this.ui.lang}`) {
         const el = document.getElementById('guidance')
         if (el) el.scrollIntoView({ behavior: 'smooth' })
-      })
+      } else {
+        this.$router.push({ path: `/${this.ui.lang}`, hash: '#guidance' })
+      }
     }
   }
 }

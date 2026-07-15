@@ -2,21 +2,10 @@
   <AppNav />
 
   <main>
-    <ArticleReader v-if="readingArticle" :article="readingArticle" />
-
-    <HeroSection v-show="!readingArticle" />
-    <TipBanner v-show="!readingArticle" />
-    <StatsStrip class="band band--green" v-show="!readingArticle" />
-    <GuidanceGrid class="band band--orange" v-show="!readingArticle" />
-    <ArticleTeaser class="band band--green" v-show="!readingArticle" />
-    <FaqSection v-show="!readingArticle" />
-    <HealthQuiz v-show="!readingArticle" />
-    <GlossarySection class="band band--blue" v-show="!readingArticle" />
-    <SeriesSection class="band band--green" v-show="!readingArticle" />
-    <SubscribeCTA v-show="!readingArticle" />
+    <router-view />
   </main>
 
-  <footer v-show="!readingArticle" id="footer" class="footer">
+  <footer v-show="!$route.meta || !$route.meta.articleId" id="footer" class="footer">
     <div class="footer__inner">
       <div class="footer__brand">
         <span class="footer__logo"><Icon name="leaf" :size="18" color="#fff" /></span>
@@ -33,49 +22,20 @@
 </template>
 
 <script>
-import { ui } from './store.js'
-import { i18n } from './data/i18n.js'
-import { getArticle } from './data/articles.js'
 import AppNav from './components/AppNav.vue'
-import HeroSection from './components/HeroSection.vue'
-import GuidanceGrid from './components/GuidanceGrid.vue'
-import ArticleTeaser from './components/ArticleTeaser.vue'
-import ArticleReader from './components/ArticleReader.vue'
-import StatsStrip from './components/StatsStrip.vue'
-import FaqSection from './components/FaqSection.vue'
-import SubscribeCTA from './components/SubscribeCTA.vue'
-import TipBanner from './components/TipBanner.vue'
-import HealthQuiz from './components/HealthQuiz.vue'
-import GlossarySection from './components/GlossarySection.vue'
-import SeriesSection from './components/SeriesSection.vue'
 import Icon from './components/Icon.vue'
+import { i18n } from './data/i18n.js'
 
 export default {
   name: 'App',
-  components: {
-    AppNav,
-    HeroSection,
-    GuidanceGrid,
-    ArticleTeaser,
-    ArticleReader,
-    StatsStrip,
-    FaqSection,
-    SubscribeCTA,
-    TipBanner,
-    HealthQuiz,
-    GlossarySection,
-    SeriesSection,
-    Icon
-  },
-  data() {
-    return { ui }
-  },
+  components: { AppNav, Icon },
   computed: {
-    t() {
-      return i18n[this.ui.lang]
+    // 语言从 URL 路径判定，保证文章页与首页 footer 文案正确
+    lang() {
+      return this.$route.path.startsWith('/en') ? 'en' : 'zh'
     },
-    readingArticle() {
-      return this.ui.reading ? getArticle(this.ui.reading) : null
+    t() {
+      return i18n[this.lang]
     }
   }
 }

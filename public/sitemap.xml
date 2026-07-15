@@ -1,63 +1,355 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 请将下方域名替换为你自己的 Netlify 域名，例如 https://pureeat.netlify.app -->
-<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://healthy.24992345.xyz/</loc>
+    <loc>https://healthy.24992345.xyz/zh</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/mediterranean</loc>
+    <loc>https://healthy.24992345.xyz/en</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/gut-health</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/gut-health" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/gut-health" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/gut-health" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/diet</loc>
+    <loc>https://healthy.24992345.xyz/en/article/gut-health</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/gut-health" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/gut-health" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/gut-health" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/sleep</loc>
+    <loc>https://healthy.24992345.xyz/zh/article/circadian</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/circadian" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/circadian" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/circadian" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/exercise</loc>
+    <loc>https://healthy.24992345.xyz/en/article/circadian</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/circadian" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/circadian" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/circadian" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/jogging</loc>
+    <loc>https://healthy.24992345.xyz/zh/article/strength</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/strength" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/strength" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/strength" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/aerobic</loc>
+    <loc>https://healthy.24992345.xyz/en/article/strength</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/strength" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/strength" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/strength" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/yoga</loc>
+    <loc>https://healthy.24992345.xyz/zh/article/run-form</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/run-form" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/run-form" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/run-form" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/pilates</loc>
+    <loc>https://healthy.24992345.xyz/en/article/run-form</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/run-form" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/run-form" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/run-form" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/taichi</loc>
+    <loc>https://healthy.24992345.xyz/zh/article/hiit</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/hiit" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/hiit" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/hiit" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/meditation</loc>
+    <loc>https://healthy.24992345.xyz/en/article/hiit</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/hiit" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/hiit" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/hiit" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.24992345.xyz/#/article/hiking</loc>
+    <loc>https://healthy.24992345.xyz/zh/article/yoga-desk</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/yoga-desk" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/yoga-desk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/yoga-desk" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/yoga-desk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/yoga-desk" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/yoga-desk" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/yoga-desk" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/pilates-posture</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/pilates-posture" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/pilates-posture" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/pilates-posture" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/pilates-posture</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/pilates-posture" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/pilates-posture" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/pilates-posture" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/taichi-balance</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/taichi-balance" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/taichi-balance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/taichi-balance" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/taichi-balance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/taichi-balance" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/taichi-balance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/taichi-balance" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/breathwork</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/breathwork" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/breathwork" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/breathwork" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/breathwork</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/breathwork" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/breathwork" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/breathwork" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/hike-safety</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/hike-safety" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/hike-safety" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/hike-safety" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/hike-safety</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/hike-safety" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/hike-safety" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/hike-safety" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/mediterranean</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/mediterranean" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/mediterranean" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/mediterranean" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/mediterranean</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/mediterranean" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/mediterranean" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/mediterranean" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/diet</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/diet" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/diet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/diet" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/diet</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/diet" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/diet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/diet" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/sleep</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/sleep" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/sleep" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/sleep" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/sleep</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/sleep" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/sleep" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/sleep" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/exercise</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/exercise" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/exercise" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/exercise" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/exercise</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/exercise" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/exercise" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/exercise" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/jogging</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/jogging" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/jogging" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/jogging" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/jogging</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/jogging" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/jogging" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/jogging" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/aerobic</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/aerobic" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/aerobic" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/aerobic" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/aerobic</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/aerobic" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/aerobic" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/aerobic" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/yoga</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/yoga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/yoga" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/yoga" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/yoga</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/yoga" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/yoga" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/yoga" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/pilates</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/pilates" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/pilates" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/pilates" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/pilates</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/pilates" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/pilates" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/pilates" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/taichi</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/taichi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/taichi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/taichi" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/taichi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/taichi" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/taichi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/taichi" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/meditation</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/meditation" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/meditation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/meditation" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/meditation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/meditation" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/meditation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/meditation" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/zh/article/hiking</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/hiking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/hiking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/hiking" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://healthy.24992345.xyz/en/article/hiking</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://healthy.24992345.xyz/en/article/hiking" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://healthy.24992345.xyz/zh/article/hiking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://healthy.24992345.xyz/zh/article/hiking" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

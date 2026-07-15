@@ -1,7 +1,7 @@
 <template>
   <a
     class="acard"
-    :href="'#' + articleLink"
+    :href="articleLink"
     target="_blank"
     rel="noopener noreferrer"
     :style="{ '--cover': coverGradient(article.cover) }"
@@ -54,7 +54,8 @@ export default {
       return i18n[this.ui.lang]
     },
     articleLink() {
-      return '/article/' + this.article.id
+      const lang = (this.$route && this.$route.path) ? (this.$route.path.startsWith('/en') ? 'en' : 'zh') : this.ui.lang
+      return '/' + lang + '/article/' + this.article.id
     },
     icon() {
       return this.iconForArticle(this.article.id)

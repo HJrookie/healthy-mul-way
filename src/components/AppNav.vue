@@ -81,16 +81,21 @@ export default {
     },
     goTop() {
       this.menuOpen = false
-      if (this.ui.reading) this.ui.reading = null
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      if (this.$route.path === `/${this.ui.lang}`) {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else {
+        this.$router.push(`/${this.ui.lang}`)
+      }
     },
     goSection(id) {
       this.menuOpen = false
-      this.ui.reading = null
-      this.$nextTick(() => {
+      if (this.$route.path === `/${this.ui.lang}`) {
         const el = document.getElementById(id)
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      })
+      } else {
+        // 在文章页点击导航：先回首页再锚定到对应区块
+        this.$router.push({ path: `/${this.ui.lang}`, hash: `#${id}` })
+      }
     }
   }
 }

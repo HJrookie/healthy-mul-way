@@ -117,8 +117,8 @@ import { articleTopics } from '../data/topics.js'
 import { coverGradient } from '../data/covers.js'
 import Icon from './Icon.vue'
 
-const DEFAULT_TITLE = 'PureEat · 净食'
-const DEFAULT_DESC = 'PureEat 净食 — 向大众传播全球权威健康饮食指南的科普平台。'
+// 注意：本组件的 SEO（title / meta / OG / JSON-LD）已由外层 ArticleView 通过
+// @unhead/vue 的 useHead 在「构建时」注入到静态 HTML，这里不再做 JS 注入。
 
 export default {
   name: 'ArticleReader',
@@ -134,8 +134,7 @@ export default {
       articleTopics,
       isBookmarked,
       toggleBookmark,
-      progress: 0,
-      _jsonld: null
+      progress: 0
     }
   },
   computed: {
@@ -163,22 +162,12 @@ export default {
       return [...withTopic, ...fill].slice(0, 3).map((s) => s.a)
     }
   },
-  watch: {
-    article() {
-      this.updateSeo()
-    },
-    'ui.lang'() {
-      this.updateSeo()
-    }
-  },
   mounted() {
-    this.updateSeo()
     window.addEventListener('scroll', this.onScroll, { passive: true })
     this.onScroll()
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.onScroll)
-    this.restoreSeo()
   },
   methods: {
     closeArticle,
@@ -192,74 +181,6 @@ export default {
     onScroll() {
       const h = document.documentElement.scrollHeight - window.innerHeight
       this.progress = h > 0 ? Math.min(100, Math.max(0, (window.scrollY / h) * 100)) : 0
-    },
-    /* —— SEO：每篇文章独立的标题 / 描述 / OG / JSON-LD —— */
-    setMeta(name, content) {
-      let el = document.head.querySelector(`meta[name="${name}"]`)
-      if (!el) {
-        el = document.createElement('meta')
-        el.setAttribute('name', name)
-        document.head.appendChild(el)
-      }
-      el.setAttribute('content', content)
-    },
-    setOg(prop, content) {
-      let el = document.head.querySelector(`meta[property="og:${prop}"]`)
-      if (!el) {
-        el = document.createElement('meta')
-        el.setAttribute('property', `og:${prop}`)
-        document.head.appendChild(el)
-      }
-      el.setAttribute('content', content)
-    },
-    updateSeo() {
-      const a = this.article
-      const lang = this.ui.lang
-      const title = `${a.title[lang]} · PureEat 净食`
-      const url = `${window.location.origin}${window.location.pathname}#/article/${a.id}`
-      const ogImage = `${window.location.origin}${window.location.pathname}og-default.svg`
-      document.title = title
-      this.setMeta('description', a.excerpt[lang])
-      this.setOg('title', title)
-      this.setOg('description', a.excerpt[lang])
-      this.setOg('type', 'article')
-      this.setOg('url', url)
-      this.setOg('site_name', 'PureEat 净食')
-      this.setOg('locale', lang === 'zh' ? 'zh_CN' : 'en_US')
-      this.setOg('image', ogImage)
-      // JSON-LD 结构化数据
-      if (this._jsonld && this._jsonld.parentNode) {
-        this._jsonld.parentNode.removeChild(this._jsonld)
-      }
-      const data = {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: a.title[lang],
-        description: a.excerpt[lang],
-        author: { '@type': 'Organization', name: a.author[lang] },
-        datePublished: a.date,
-        inLanguage: lang === 'zh' ? 'zh-CN' : 'en',
-        mainEntityOfPage: url,
-        image: ogImage,
-        publisher: { '@type': 'Organization', name: 'PureEat 净食' }
-      }
-      const script = document.createElement('script')
-      script.type = 'application/ld+json'
-      script.id = 'article-jsonld'
-      script.textContent = JSON.stringify(data)
-      document.head.appendChild(script)
-      this._jsonld = script
-    },
-    restoreSeo() {
-      document.title = DEFAULT_TITLE
-      this.setMeta('description', DEFAULT_DESC)
-      this.setOg('title', DEFAULT_TITLE)
-      this.setOg('description', DEFAULT_DESC)
-      this.setOg('type', 'website')
-      if (this._jsonld && this._jsonld.parentNode) {
-        this._jsonld.parentNode.removeChild(this._jsonld)
-        this._jsonld = null
-      }
     }
   }
 }

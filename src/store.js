@@ -1,8 +1,10 @@
 import { reactive } from 'vue'
+import { getRouter } from './router-instance.js'
 
 /**
- * 全局轻量状态：语言切换、文章阅读视图、暗色主题、本地收藏。
- * 使用 reactive 单例，Options API 组件中通过 computed 引用 ui.lang 等即可。
+ * 全局轻量状态：语言、暗色主题、本地收藏。
+ * 文章阅读视图改由 vue-router 路由驱动（/zh/article/:id），
+ * 不再使用 ui.reading。组件通过 computed 引用 ui.lang 等即可。
  */
 
 const THEME_KEY = 'pureeat:theme'
@@ -29,8 +31,7 @@ function initialBookmarks() {
 }
 
 export const ui = reactive({
-  lang: 'zh', // 'zh' | 'en'
-  reading: null, // 当前正在阅读的文章 id，null 表示停留在首页
+  lang: 'zh', // 'zh' | 'en'，由 URL 路由同步
   theme: initialTheme(), // 'light' | 'dark'
   bookmarks: initialBookmarks() // 收藏的文章 id 列表
 })
@@ -57,12 +58,21 @@ function persistBookmarks() {
   }
 }
 
+// —— 语言：写进 URL ——
 export function setLang(lang) {
-  if (lang === 'zh' || lang === 'en') ui.lang = lang
+  if (lang !== 'zh' && lang !== 'en') return
+  ui.lang = lang
+  const router = getRouter()
+  if (typeof window !== 'undefined' && router) {
+    const cur = router.currentRoute.value
+    const id = cur.meta && cur.meta.articleId
+    // 保持当前页面类型，只切换语言前缀
+    router.push(id ? `/${lang}/article/${id}` : `/${lang}`)
+  }
 }
 
 export function toggleLang() {
-  ui.lang = ui.lang === 'zh' ? 'en' : 'zh'
+  setLang(ui.lang === 'zh' ? 'en' : 'zh')
 }
 
 export function setTheme(theme) {
@@ -87,27 +97,22 @@ export function toggleBookmark(id) {
   persistBookmarks()
 }
 
+// —— 文章：路由驱动 ——
 export function openArticle(id, { newTab = false } = {}) {
+  const lang = ui.lang
   if (typeof window !== 'undefined' && newTab) {
-    // 以 URL hash 形式在新标签页打开对应文章（#/article/<id>）
-    const url = `${window.location.origin}${window.location.pathname}#/article/${id}`
+    // 新标签页打开真实路径（不再是 hash）
+    const url = `${window.location.origin}/${lang}/article/${id}`
     window.open(url, '_blank', 'noopener,noreferrer')
     return
   }
-  ui.reading = id
-  // 进入阅读视图时回到页面顶部，保证沉浸式体验
-  if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-
-/** 解析 location.hash，返回其中携带的文章 id（如 #/article/diet） */
-export function articleIdFromHash() {
-  if (typeof window === 'undefined') return null
-  const m = window.location.hash.match(/^#\/article\/([\w-]+)/)
-  return m ? m[1] : null
+  const router = getRouter()
+  if (router) router.push(`/${lang}/article/${id}`)
 }
 
 export function closeArticle() {
-  ui.reading = null
+  const router = getRouter()
+  if (router) router.push(`/${ui.lang}`)
 }
 
 /** 取双语字段：字段为 { zh, en } 时返回当前语言的值 */
