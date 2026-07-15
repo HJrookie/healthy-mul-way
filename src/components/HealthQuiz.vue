@@ -44,12 +44,14 @@
 
         <p class="quiz__rec-label">{{ b(quiz.ctaRead) }}</p>
         <div class="quiz__rec">
-          <button
+          <a
             v-for="a in recommended"
             :key="a.id"
             class="quiz__rec-card"
             :style="{ '--cover': coverGradient(a.cover) }"
-            @click="open(a.id)"
+            :href="'/' + (ui.lang || 'zh') + '/article/' + a.id"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span class="quiz__rec-cat">{{ b(a.category) }}</span>
             <span class="quiz__rec-title">{{ b(a.title) }}</span>
@@ -57,9 +59,8 @@
               {{ t.article.readArticle }}
               <Icon name="external" :size="14" color="#1d6838" />
             </span>
-          </button>
+          </a>
         </div>
-
         <button class="quiz__again" @click="reset">{{ b(quiz.ctaAgain) }}</button>
       </div>
     </div>

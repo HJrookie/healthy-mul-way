@@ -11,6 +11,16 @@ import pilatesPosture from './pilates-posture.js'
 import taichiBalance from './taichi-balance.js'
 import breathwork from './breathwork.js'
 import hikeSafety from './hike-safety.js'
+import intermittentFasting from './intermittent-fasting.js'
+import hydration from './hydration.js'
+import plantBased from './plant-based.js'
+import caffeine from './caffeine.js'
+import flexibility from './flexibility.js'
+import boneHealth from './bone-health.js'
+import stress from './stress.js'
+import eyeHealth from './eye-health.js'
+import immunity from './immunity.js'
+import bloodSugar from './blood-sugar.js'
 
 export const articlesExtra = [
   gutHealth,
@@ -22,5 +32,15 @@ export const articlesExtra = [
   pilatesPosture,
   taichiBalance,
   breathwork,
-  hikeSafety
+  hikeSafety,
+  intermittentFasting,
+  hydration,
+  plantBased,
+  caffeine,
+  flexibility,
+  boneHealth,
+  stress,
+  eyeHealth,
+  immunity,
+  bloodSugar
 ]

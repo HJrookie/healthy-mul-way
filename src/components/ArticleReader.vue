@@ -82,12 +82,14 @@
         <div class="reader__related" v-if="related.length">
           <h3 class="reader__related-title">{{ t.article.related }}</h3>
           <div class="reader__related-grid">
-            <button
+            <a
               v-for="a in related"
               :key="a.id"
               class="rel"
               :style="{ '--cover': coverGradient(a.cover) }"
-              @click="open(a.id)"
+              :href="'/' + (ui.lang || 'zh') + '/article/' + a.id"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span class="rel__cover"><span class="rel__cat">{{ b(a.category) }}</span></span>
               <span class="rel__title">{{ b(a.title) }}</span>
@@ -95,7 +97,7 @@
                 {{ t.article.readArticle }}
                 <Icon name="external" :size="14" color="#1d6838" />
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </footer>

@@ -32,7 +32,17 @@ export const articleTopics = {
   'pilates-posture': ['fitness'],
   'taichi-balance': ['fitness', 'mind'],
   breathwork: ['mind'],
-  'hike-safety': ['fitness']
+  'hike-safety': ['fitness'],
+  'intermittent-fasting': ['diet'],
+  hydration: ['diet'],
+  'plant-based': ['diet'],
+  caffeine: ['diet'],
+  flexibility: ['fitness'],
+  'bone-health': ['diet', 'fitness'],
+  stress: ['mind'],
+  'eye-health': ['mind'],
+  immunity: ['diet'],
+  'blood-sugar': ['diet']
 }
 
 /**

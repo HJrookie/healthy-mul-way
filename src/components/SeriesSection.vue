@@ -14,15 +14,17 @@
           <p class="scard__desc">{{ b(s.desc) }}</p>
 
           <div class="scard__articles">
-            <button
+            <a
               v-for="aid in s.articles"
               :key="aid"
               class="scard__chip"
-              @click="open(aid)"
+              :href="'/' + (ui.lang || 'zh') + '/article/' + aid"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span class="scard__dot" :style="{ background: coverGradient(getArticle(aid).cover) }"></span>
               {{ b(getArticle(aid).title) }}
-            </button>
+            </a>
           </div>
 
           <span class="scard__count">{{ s.articles.length }} {{ t.series.articles }}</span>
