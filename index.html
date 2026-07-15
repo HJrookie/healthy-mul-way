@@ -9,7 +9,29 @@
       name="description"
       content="PureEat 净食 — 向大众传播全球权威健康饮食指南的科普平台。"
     />
+    <!-- 社交分享元信息（默认；文章页会由 ArticleReader 动态覆盖） -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PureEat 净食" />
+    <meta property="og:title" content="PureEat · 净食" />
+    <meta property="og:description" content="向大众传播全球权威健康饮食指南的科普平台。" />
+    <meta property="og:image" content="/og-default.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PureEat · 净食" />
+    <meta name="twitter:description" content="向大众传播全球权威健康饮食指南的科普平台。" />
+    <meta name="twitter:image" content="/og-default.svg" />
     <title>PureEat · 净食</title>
+    <!-- 在首屏绘制前应用主题，避免暗色模式闪烁 -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('pureeat:theme');
+          if (!t) {
+            t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', t || 'light');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

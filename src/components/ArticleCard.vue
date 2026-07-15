@@ -1,11 +1,22 @@
 <template>
   <a
     class="acard"
-    :href="'#article'"
-    @click.prevent="open"
+    :href="'#' + articleLink"
+    target="_blank"
+    rel="noopener noreferrer"
     :style="{ '--cover': coverGradient(article.cover) }"
   >
+    <button
+      class="acard__bm"
+      :class="{ 'is-on': isBookmarked(article.id) }"
+      @click.prevent.stop="toggleBookmark(article.id)"
+      :aria-label="isBookmarked(article.id) ? t.bookmark.remove : t.bookmark.save"
+      :title="isBookmarked(article.id) ? t.bookmark.remove : t.bookmark.save"
+    >
+      <Icon name="bookmark" :size="18" :color="isBookmarked(article.id) ? '#fff' : 'currentColor'" />
+    </button>
     <div class="acard__cover">
+      <span class="acard__icon"><Icon :name="icon" :size="20" color="#fff" /></span>
       <span class="acard__cat">{{ b(article.category) }}</span>
     </div>
     <div class="acard__body">
@@ -14,8 +25,8 @@
       <div class="acard__meta">
         <span>{{ article.readingTime }} {{ t.article.readingTime }}</span>
         <span class="acard__read">
-          {{ t.card.readMore }}
-          <Icon name="arrowRight" :size="14" />
+          {{ t.article.readArticle }}
+          <Icon name="external" :size="14" />
         </span>
       </div>
     </div>
@@ -23,9 +34,10 @@
 </template>
 
 <script>
-import { ui, openArticle } from '../store.js'
+import { ui, toggleBookmark, isBookmarked } from '../store.js'
 import { i18n } from '../data/i18n.js'
 import { coverGradient } from '../data/covers.js'
+import { iconForArticle } from '../data/topics.js'
 import Icon from './Icon.vue'
 
 export default {
@@ -35,18 +47,20 @@ export default {
     article: { type: Object, required: true }
   },
   data() {
-    return { ui, coverGradient }
+    return { ui, coverGradient, iconForArticle, toggleBookmark, isBookmarked }
   },
   computed: {
     t() {
       return i18n[this.ui.lang]
+    },
+    articleLink() {
+      return '/article/' + this.article.id
+    },
+    icon() {
+      return this.iconForArticle(this.article.id)
     }
   },
   methods: {
-    openArticle,
-    open() {
-      openArticle(this.article.id)
-    },
     b(field) {
       return field ? field[this.ui.lang] : ''
     }
@@ -56,18 +70,47 @@ export default {
 
 <style scoped>
 .acard {
+  position: relative;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  background: rgba(255, 255, 255, 0.62);
+  background: var(--glass);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--gborder);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+}
+.acard__bm {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.28);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.22s ease;
+}
+.acard__bm:hover {
+  transform: scale(1.08);
+  background: rgba(0, 0, 0, 0.42);
+}
+.acard__bm.is-on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(52, 199, 89, 0.4);
 }
 .acard:hover {
   transform: translateY(-6px) scale(1.015);
@@ -78,7 +121,19 @@ export default {
   background: var(--cover);
   display: flex;
   align-items: flex-start;
+  gap: 10px;
   padding: 14px 16px;
+}
+.acard__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 .acard__cat {
   font-size: 12px;

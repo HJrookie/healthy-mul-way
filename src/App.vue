@@ -4,14 +4,19 @@
   <main>
     <ArticleReader v-if="readingArticle" :article="readingArticle" />
 
-    <template v-else>
-      <HeroSection />
-      <GuidanceGrid />
-      <ArticleTeaser />
-    </template>
+    <HeroSection v-show="!readingArticle" />
+    <TipBanner v-show="!readingArticle" />
+    <StatsStrip class="band band--green" v-show="!readingArticle" />
+    <GuidanceGrid class="band band--orange" v-show="!readingArticle" />
+    <ArticleTeaser class="band band--green" v-show="!readingArticle" />
+    <FaqSection v-show="!readingArticle" />
+    <HealthQuiz v-show="!readingArticle" />
+    <GlossarySection class="band band--blue" v-show="!readingArticle" />
+    <SeriesSection class="band band--green" v-show="!readingArticle" />
+    <SubscribeCTA v-show="!readingArticle" />
   </main>
 
-  <footer v-if="!readingArticle" id="footer" class="footer">
+  <footer v-show="!readingArticle" id="footer" class="footer">
     <div class="footer__inner">
       <div class="footer__brand">
         <span class="footer__logo"><Icon name="leaf" :size="18" color="#fff" /></span>
@@ -36,6 +41,13 @@ import HeroSection from './components/HeroSection.vue'
 import GuidanceGrid from './components/GuidanceGrid.vue'
 import ArticleTeaser from './components/ArticleTeaser.vue'
 import ArticleReader from './components/ArticleReader.vue'
+import StatsStrip from './components/StatsStrip.vue'
+import FaqSection from './components/FaqSection.vue'
+import SubscribeCTA from './components/SubscribeCTA.vue'
+import TipBanner from './components/TipBanner.vue'
+import HealthQuiz from './components/HealthQuiz.vue'
+import GlossarySection from './components/GlossarySection.vue'
+import SeriesSection from './components/SeriesSection.vue'
 import Icon from './components/Icon.vue'
 
 export default {
@@ -46,6 +58,13 @@ export default {
     GuidanceGrid,
     ArticleTeaser,
     ArticleReader,
+    StatsStrip,
+    FaqSection,
+    SubscribeCTA,
+    TipBanner,
+    HealthQuiz,
+    GlossarySection,
+    SeriesSection,
     Icon
   },
   data() {
@@ -65,8 +84,8 @@ export default {
 <style scoped>
 .footer {
   padding: 70px 24px 60px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  background: rgba(255, 255, 255, 0.4);
+  border-top: 1px solid var(--hairline);
+  background: var(--surface);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }

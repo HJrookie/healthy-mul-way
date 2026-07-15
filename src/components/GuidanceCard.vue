@@ -72,10 +72,10 @@ export default {
   display: block;
   text-decoration: none;
   color: inherit;
-  background: rgba(255, 255, 255, 0.62);
+  background: var(--glass);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--gborder);
   border-radius: 22px;
   padding: 26px 24px 22px;
   overflow: hidden;

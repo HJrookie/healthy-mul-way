@@ -16,6 +16,15 @@
         <a href="#article" @click.prevent="goSection('article')">{{ t.nav.article }}</a>
         <a href="#footer" @click.prevent="goSection('footer')">{{ t.nav.about }}</a>
 
+        <button
+          class="theme-toggle"
+          @click="toggleTheme"
+          :aria-label="ui.theme === 'dark' ? t.theme.toLight : t.theme.toDark"
+          :title="ui.theme === 'dark' ? t.theme.toLight : t.theme.toDark"
+        >
+          <Icon :name="ui.theme === 'dark' ? 'sun' : 'moon'" :size="18" />
+        </button>
+
         <div class="lang" @click.stop>
           <button
             class="lang__btn"
@@ -42,7 +51,7 @@
 </template>
 
 <script>
-import { ui, setLang } from '../store.js'
+import { ui, setLang, toggleTheme } from '../store.js'
 import { i18n } from '../data/i18n.js'
 import Icon from './Icon.vue'
 
@@ -66,6 +75,7 @@ export default {
   },
   methods: {
     setLang,
+    toggleTheme,
     onScroll() {
       this.scrolled = window.scrollY > 12
     },
@@ -94,10 +104,10 @@ export default {
   transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
 .nav--scrolled {
-  background: rgba(245, 245, 247, 0.72);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid var(--gborder);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }
 .nav__inner {
@@ -160,8 +170,8 @@ export default {
 }
 .lang {
   display: flex;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: var(--hairline-2);
+  border: 1px solid var(--gborder);
   border-radius: 999px;
   padding: 3px;
 }
@@ -177,9 +187,26 @@ export default {
   transition: all 0.25s ease;
 }
 .lang__btn.active {
-  background: #fff;
+  background: var(--chip-active);
   color: var(--text);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--gborder);
+  background: var(--chip);
+  color: var(--text);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 .nav__toggle {
   display: none;
@@ -201,10 +228,10 @@ export default {
     align-items: stretch;
     gap: 8px;
     padding: 16px;
-    background: rgba(245, 245, 247, 0.86);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--gborder);
     border-radius: 18px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
     transform-origin: top right;

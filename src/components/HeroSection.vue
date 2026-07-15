@@ -163,15 +163,15 @@ export default {
   box-shadow: 0 16px 34px rgba(52, 199, 89, 0.4);
 }
 .btn--ghost {
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--chip);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--gborder);
   color: var(--text);
 }
 .btn--ghost:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--chip-active);
 }
 .hero__scroll {
   position: absolute;
@@ -180,7 +180,7 @@ export default {
   transform: translateX(-50%);
   width: 24px;
   height: 38px;
-  border: 2px solid rgba(0, 0, 0, 0.18);
+  border: 2px solid var(--scroll-border);
   border-radius: 14px;
   z-index: 1;
 }

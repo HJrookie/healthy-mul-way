@@ -9,6 +9,83 @@
   --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'SF Pro Text',
     'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
   --font-serif: 'Noto Serif SC', Georgia, 'Songti SC', serif;
+
+  /* 玻璃拟态面板（暗色模式整体翻转） */
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-2: rgba(255, 255, 255, 0.7);
+  --glass-3: rgba(255, 255, 255, 0.6);
+  --gborder: rgba(255, 255, 255, 0.3);
+  --gborder-2: rgba(255, 255, 255, 0.5);
+  --gborder-3: rgba(255, 255, 255, 0.45);
+  --chip: rgba(255, 255, 255, 0.6);
+  --chip-active: #ffffff;
+  --nav-bg: rgba(245, 245, 247, 0.72);
+  --surface: rgba(255, 255, 255, 0.4);
+  --hairline: rgba(0, 0, 0, 0.07);
+  --hairline-2: rgba(0, 0, 0, 0.08);
+  --scroll-border: rgba(0, 0, 0, 0.18);
+  --text-2: #333337; /* 阅读正文 */
+  --text-3: #2b2b2e;
+  --text-4: #2b2b2e; /* callout 文本 */
+  --tint-green: rgba(52, 199, 89, 0.06);
+  --tint-orange: rgba(232, 149, 90, 0.07);
+  --tint-blue: rgba(48, 176, 199, 0.06);
+  --faq-bg: linear-gradient(
+    180deg,
+    rgba(238, 243, 238, 0) 0%,
+    rgba(238, 243, 238, 0.7) 18%,
+    rgba(238, 243, 238, 0.7) 82%,
+    rgba(238, 243, 238, 0) 100%
+  );
+  --quiz-bg: linear-gradient(
+    180deg,
+    rgba(238, 243, 247, 0) 0%,
+    rgba(238, 243, 247, 0.7) 16%,
+    rgba(238, 243, 247, 0.7) 84%,
+    rgba(238, 243, 247, 0) 100%
+  );
+}
+
+:root[data-theme='dark'] {
+  --bg: #0e0f12;
+  --bg-2: #15171b;
+  --text: #f2f2f5;
+  --muted: #a1a1aa;
+  --accent: #3ad15f;
+
+  --glass: rgba(30, 32, 36, 0.6);
+  --glass-2: rgba(30, 32, 36, 0.72);
+  --glass-3: rgba(30, 32, 36, 0.55);
+  --gborder: rgba(255, 255, 255, 0.09);
+  --gborder-2: rgba(255, 255, 255, 0.07);
+  --gborder-3: rgba(255, 255, 255, 0.1);
+  --chip: rgba(255, 255, 255, 0.06);
+  --chip-active: #2a2c30;
+  --nav-bg: rgba(16, 17, 20, 0.72);
+  --surface: rgba(30, 32, 36, 0.5);
+  --hairline: rgba(255, 255, 255, 0.1);
+  --hairline-2: rgba(255, 255, 255, 0.08);
+  --scroll-border: rgba(255, 255, 255, 0.25);
+  --text-2: #d7d7db;
+  --text-3: #cfcfd4;
+  --text-4: #d7d7db;
+  --tint-green: rgba(52, 199, 89, 0.12);
+  --tint-orange: rgba(232, 149, 90, 0.13);
+  --tint-blue: rgba(48, 176, 199, 0.12);
+  --faq-bg: linear-gradient(
+    180deg,
+    rgba(20, 24, 22, 0) 0%,
+    rgba(20, 24, 22, 0.7) 18%,
+    rgba(20, 24, 22, 0.7) 82%,
+    rgba(20, 24, 22, 0) 100%
+  );
+  --quiz-bg: linear-gradient(
+    180deg,
+    rgba(20, 22, 26, 0) 0%,
+    rgba(20, 22, 26, 0.7) 16%,
+    rgba(20, 22, 26, 0.7) 84%,
+    rgba(20, 22, 26, 0) 100%
+  );
 }
 
 * {
@@ -32,6 +109,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+:root[data-theme='dark'] body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(52, 199, 89, 0.08), transparent 60%),
+    radial-gradient(1000px 500px at 0% 10%, rgba(48, 176, 199, 0.07), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;
 }
 
 a {
@@ -49,6 +135,20 @@ a {
   transform: none;
 }
 
+/* 板块色彩分区（视觉调味：白 / 极浅绿 / 极浅橙 交替） */
+.band {
+  width: 100%;
+}
+.band--green {
+  background: var(--tint-green);
+}
+.band--orange {
+  background: var(--tint-orange);
+}
+.band--blue {
+  background: var(--tint-blue);
+}
+
 /* 选区配色 */
 ::selection {
   background: rgba(52, 199, 89, 0.22);
@@ -59,7 +159,7 @@ a {
   width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.18);
+  background: var(--scroll-border);
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: content-box;

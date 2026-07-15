@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="PureEat 净食">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34c759"/>
+      <stop offset="55%" stop-color="#30b0c7"/>
+      <stop offset="100%" stop-color="#1f8a45"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="12%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(96,250)" fill="#ffffff">
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" transform="translate(-2,0) scale(3.4)"/>
+  </g>
+  <text x="96" y="420" font-family="'Noto Sans SC','Inter',sans-serif" font-size="92" font-weight="800" fill="#ffffff">净食 PureEat</text>
+  <text x="98" y="486" font-family="'Noto Sans SC','Inter',sans-serif" font-size="34" font-weight="500" fill="#ffffff" fill-opacity="0.9">吃对食物，是对身体最温柔的投资</text>
+  <text x="98" y="552" font-family="'Noto Sans SC','Inter',sans-serif" font-size="26" font-weight="500" fill="#ffffff" fill-opacity="0.75">全球权威健康饮食指南 · 科学共识的中文科普</text>
+</svg>
