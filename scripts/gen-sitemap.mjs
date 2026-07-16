@@ -6,7 +6,7 @@ import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 
-const SITE = 'https://healthy.24992345.xyz'
+const SITE = 'https://healthy-guide.24992345.xyz'
 const langs = ['zh', 'en']
 
 function homeBlock() {

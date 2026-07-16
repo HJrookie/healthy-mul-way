@@ -7,7 +7,7 @@ Vue 3 + Vite 8 + Options API 健康科普站（中英文双语）。技术栈：
 - **正确 SSG 包是 `vite-ssg`**（antfu），不是 `vite-plugin-ssg`（那个是 React 专用）。构建命令 `vite-ssg build`。
 - **文章路由用字面量路径 + meta 传 id**：`/zh/article/${id}` 作为静态路由，`id` 经 `route.meta.articleId` 传给视图组件；不要用 `:id` 动态段（会导致 `route.params.id` 为 undefined）。
 - **`base: '/'`**（history 模式要求绝对基路径，不能是 `'./'`）。vite-ssg 输出扁平 `.html`，用 `scripts/fix-dist-paths.mjs` 转成目录式 `index.html` 以兼容各静态主机。
-- **部署**：用户自己管 Netlify（https://healthy.24992345.xyz），**绝不主动公开部署**；只本地 `npm run build` + present_files 预览（见 ~/.workbuddy/MEMORY.md 的「不公开部署」约束）。
+- **部署**：用户自己管 Netlify（https://healthy-guide.24992345.xyz），**绝不主动公开部署**；只本地 `npm run build` + present_files 预览（见 ~/.workbuddy/MEMORY.md 的「不公开部署」约束）。
 
 ## 路由结构
 `/` → `/zh`；`/zh`、`/en`（首页）；`/zh/article/:id`、`/en/article/:id`（11 篇×2 语言 = 22 篇）+ 2 首页 = 24 个预渲染页。语言从 URL 前缀判定，`store.setLang` 切语言时同步 push 对应前缀路由。

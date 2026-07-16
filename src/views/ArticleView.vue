@@ -10,7 +10,7 @@ import { useHead } from '@unhead/vue'
 import { getArticle } from '../data/articles.js'
 import ArticleReader from '../components/ArticleReader.vue'
 
-const SITE = 'https://healthy.24992345.xyz'
+const SITE = 'https://healthy-guide.24992345.xyz'
 
 export default {
   name: 'ArticleView',

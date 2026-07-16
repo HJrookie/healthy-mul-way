@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # 请将下方域名替换为你自己的 Netlify 域名
-Sitemap: https://healthy.24992345.xyz/sitemap.xml
+Sitemap: https://healthy-guide.24992345.xyz/sitemap.xml

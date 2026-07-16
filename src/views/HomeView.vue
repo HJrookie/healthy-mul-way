@@ -29,7 +29,7 @@ import GlossarySection from '../components/GlossarySection.vue'
 import SeriesSection from '../components/SeriesSection.vue'
 import SubscribeCTA from '../components/SubscribeCTA.vue'
 
-const SITE = 'https://healthy.24992345.xyz'
+const SITE = 'https://healthy-guide.24992345.xyz'
 
 export default {
   name: 'HomeView',
